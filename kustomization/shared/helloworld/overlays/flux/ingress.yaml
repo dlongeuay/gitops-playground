@@ -13,6 +13,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: helloflux
+            name: helloworld
             port:
               number: 5000
