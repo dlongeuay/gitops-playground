@@ -1,0 +1,4 @@
+flux2 0.30.2
+k3d 5.4.1
+kubectl 1.22.10
+argocd 2.4.3
