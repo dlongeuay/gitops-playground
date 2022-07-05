@@ -13,7 +13,7 @@ Key Properties:
 - Commits are the trigger for changes to a target environment
 - Changes to the environment can be monitored and provide feedback
 
-## Application Deployment
+## Application Deployment Tooling
 
 - [Flux](https://github.com/fluxcd/flux2)
   - Pros
@@ -32,7 +32,9 @@ Key Properties:
     
 ## Local Development
 
-Local development leverages [K3D](https://k3d.io/) to create a local Kubernetes cluster. [Kubectl](https://kubernetes.io/docs/tasks/tools/) and [FluxCLI](https://fluxcd.io/docs/installation/#install-the-flux-cli) are used to bootstrap the cluster. 
+Local development leverages [K3D](https://k3d.io/) to create a local Kubernetes cluster. 
+
+[Kubectl](https://kubernetes.io/docs/tasks/tools/) and [FluxCLI](https://fluxcd.io/docs/installation/#install-the-flux-cli) are used to bootstrap the cluster. 
 
 A hello world app will be deployed via Flux and ArgoCD. The built-in [Traefik](https://doc.traefik.io/traefik/) ingress controller is used to proxy the applications.
 
