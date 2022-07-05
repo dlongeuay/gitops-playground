@@ -16,4 +16,4 @@ spec:
       - name: helloworld
         image: nginxdemos/hello
         ports:
-        - containerPort: 8080
+        - containerPort: 5555
