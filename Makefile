@@ -34,6 +34,8 @@ flux-bootstrap: ## Install flux in k3d cluster
 argo-bootstrap: ## Install argo in k3d cluster
 	kubectl create namespace argocd
 	kubectl apply -n argocd -f https://raw.githubusercontent.com/argoproj/argo-cd/stable/manifests/core-install.yaml
+	kubectl wait -n argocd --for=condition=ready pod -l app.kubernetes.io/name=argocd-application-controller --timeout=60s
+	kubectl apply -f manifests/argo-bootstrap.yaml
 
 .PHONY: bootstrap
 bootstrap: asdf-bootstrap k8s-bootstrap flux-bootstrap argo-bootstrap ## Perform all bootstrapping required for local development

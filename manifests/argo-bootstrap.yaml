@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: helloargo
+---
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: helloargo
+  namespace: argocd
+spec:
+  project: helloargo
+  syncPolicy:
+    # Automatically sync manifests when a diff is detected
+    automated:
+      selfHeal: true
+  source:
+    repoURL: https://github.com/dannylongeuay/gitops-playground
+    targetRevision: HEAD
+    path: kustomization/shared/helloworld/overlays/argo
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: helloargo
+---
+apiVersion: argoproj.io/v1alpha1
+kind: AppProject
+metadata:
+  name: helloargo
+  namespace: argocd
+spec:
+  description: Hello Argo Project
+  # Allow manifests to deploy from any Git repos
+  sourceRepos:
+  - '*'
+  # Only permit applications to deploy to the helloargo namespace in the same cluster
+  destinations:
+  - namespace: helloargo
+    server: https://kubernetes.default.svc
