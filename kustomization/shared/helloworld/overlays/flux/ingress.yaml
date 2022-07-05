@@ -1,7 +1,9 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: helloworld
+  name: helloflux
+  annotations:
+    kubernetes.io/ingress.class: "traefik"
 spec:
   rules:
   - host: helloflux.localhost
@@ -11,6 +13,6 @@ spec:
         pathType: Prefix
         backend:
           service:
-            name: helloworld
+            name: helloflux
             port:
               number: 5000
