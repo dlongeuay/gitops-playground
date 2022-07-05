@@ -8,7 +8,7 @@ spec:
   - name: bootstrap
     namespace: flux-system
   interval: 1m0s
-  path: ./kustomization/shared/helloworld/base
+  path: ./kustomization/shared/helloworld/overlays/flux
   prune: true
   sourceRef:
     kind: GitRepository
