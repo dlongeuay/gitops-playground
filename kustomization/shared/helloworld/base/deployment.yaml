@@ -7,10 +7,12 @@ spec:
   selector:
     matchLabels:
       app: helloworld
+      test: label
   template:
     metadata:
       labels:
         app: helloworld
+        test: label
     spec:
       containers:
       - name: helloworld
