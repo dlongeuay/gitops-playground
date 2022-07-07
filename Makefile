@@ -22,7 +22,7 @@ k8s-bootstrap: ## Create a Kubernetes cluster for local development
 flux-bootstrap: ## Install flux in k3d cluster
 	flux install
 	flux create source git gitops-playground \
-	    --url=https://github.com/dannylongeuay/gitops-playground \
+	    --url=https://github.com/dlongeuay/gitops-playground \
 	    --branch=main
 	flux create kustomization bootstrap \
 		--source=GitRepository/gitops-playground \

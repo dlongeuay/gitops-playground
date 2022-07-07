@@ -15,7 +15,7 @@ spec:
     automated:
       selfHeal: true
   source:
-    repoURL: https://github.com/dannylongeuay/gitops-playground
+    repoURL: https://github.com/dlongeuay/gitops-playground
     targetRevision: HEAD
     path: kustomization/shared/helloworld/overlays/argo
   destination:
